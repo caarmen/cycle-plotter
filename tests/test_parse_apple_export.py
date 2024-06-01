@@ -1,6 +1,6 @@
 import pytest
 
-from cycleplotter.main import parse_export
+from cycleplotter.parser.factory import create_parser
 
 
 @pytest.mark.parametrize(
@@ -17,7 +17,6 @@ def test_parse_export(
     expected_cycle_count: int,
 ):
 
-    with open(f"tests/fixtures/{fixture_path}") as xml_file:
-        xml_content = xml_file.read()
-    cycle_durations = parse_export(xml_content)
+    parser = create_parser("applehealth")
+    cycle_durations = parser.parse(f"tests/fixtures/{fixture_path}")
     assert len(cycle_durations) == expected_cycle_count

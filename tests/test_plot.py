@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
+from cycleplotter.interfaceadapters.factory import Source, create_parser
 from cycleplotter.usecases import extract_cycle_durations, plotter
-from cycleplotter.usecases.parser.factory import Source
 
 
 @pytest.mark.parametrize(
@@ -31,7 +31,8 @@ def test_plot_cycle_durations(
     image_output_path: Path = tmp_path / "test_output.png"
     assert not image_output_path.exists()
     cycle_durations = extract_cycle_durations(
-        source, path=f"tests/fixtures/{source}/{fixture_path}.{extension}"
+        create_parser(source),
+        path=f"tests/fixtures/{source}/{fixture_path}.{extension}",
     )
     plotter.plot_cycle_durations(
         cycle_durations=cycle_durations,

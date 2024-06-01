@@ -4,4 +4,3 @@ from cycleplotter.usecases.cycle_dates_to_durations import (
 from cycleplotter.usecases.extract_cycle_durations import (
     extract_cycle_durations as extract_cycle_durations,
 )
-from cycleplotter.usecases.parser.factory import Source as Source

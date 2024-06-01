@@ -1,7 +1,9 @@
 import enum
 
-from cycleplotter.usecases.parser.applehealth import AppleHealthParser
-from cycleplotter.usecases.parser.withingshealthmate import WithingsHealthmateParser
+from cycleplotter.interfaceadapters.parser.applehealth import AppleHealthParser
+from cycleplotter.interfaceadapters.parser.withingshealthmate import (
+    WithingsHealthmateParser,
+)
 
 
 class Source(enum.StrEnum):

@@ -1,6 +1,7 @@
 import argparse
 
-from cycleplotter.usecases import Source, extract_cycle_durations, plotter
+from cycleplotter.interfaceadapters.factory import Source, create_parser
+from cycleplotter.usecases import extract_cycle_durations, plotter
 
 
 def main():
@@ -19,7 +20,8 @@ def main():
         choices=Source,
     )
     args = arg_parser.parse_args()
-    cycle_durations = extract_cycle_durations(args.source, args.input_file)
+    parser = create_parser(args.source)
+    cycle_durations = extract_cycle_durations(parser, args.input_file)
     plotter.plot_cycle_durations(
         cycle_durations=cycle_durations, output_path=args.output_file
     )

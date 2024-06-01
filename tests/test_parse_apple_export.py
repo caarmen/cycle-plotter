@@ -1,6 +1,6 @@
 import pytest
 
-from cycleplotter.usecases.parser.factory import create_parser
+from cycleplotter.usecases import Parser, extract_cycle_durations
 
 
 @pytest.mark.parametrize(
@@ -17,6 +17,8 @@ def test_parse_export(
     expected_cycle_count: int,
 ):
 
-    parser = create_parser("applehealth")
-    cycle_durations = parser.parse(f"tests/fixtures/{fixture_path}")
+    cycle_durations = extract_cycle_durations(
+        Parser.APPLE,
+        f"tests/fixtures/{fixture_path}",
+    )
     assert len(cycle_durations) == expected_cycle_count

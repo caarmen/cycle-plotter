@@ -1,7 +1,6 @@
 import argparse
 
-from cycleplotter.parser import factory
-from cycleplotter.usecases import plotter
+from cycleplotter.usecases import Parser, extract_cycle_durations, plotter
 
 
 def main():
@@ -15,8 +14,7 @@ def main():
         help="path to image file to export",
     )
     args = arg_parser.parse_args()
-    parser = factory("apple")
-    cycle_durations = parser.parse(args.input_file)
+    cycle_durations = extract_cycle_durations(Parser.APPLE, args.input_file)
     plotter.plot_cycle_durations(
         cycle_durations=cycle_durations, output_path=args.output_file
     )

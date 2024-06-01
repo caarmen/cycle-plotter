@@ -1,7 +1,12 @@
+import enum
+
 from cycleplotter.usecases.parser.applehealth import AppleHealthParser
 
 
-def create_parser(name: str):
-    if name == "applehealth":
+class Parser(enum.Enum):
+    APPLE = "apple"
+
+
+def create_parser(parser: Parser):
+    if parser == Parser.APPLE:
         return AppleHealthParser()
-    raise ValueError(f"{name} is not a known parser")

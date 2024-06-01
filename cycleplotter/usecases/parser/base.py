@@ -1,9 +1,8 @@
+import datetime as dt
 from abc import ABC, abstractmethod
 
-from cycleplotter.entities.cycle_duration import CycleDuration
 
-
-class Parser(ABC):
+class BaseParser(ABC):
     @abstractmethod
-    def parse(input_data_path: str) -> list[CycleDuration]:
+    def parse(input_data_path: str) -> list[dt.datetime]:
         raise NotImplementedError

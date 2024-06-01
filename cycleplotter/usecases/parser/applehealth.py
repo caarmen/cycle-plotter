@@ -1,9 +1,9 @@
 import datetime as dt
-import zipfile
 
 from defusedxml import ElementTree as ET
 
 from cycleplotter.entities.cycle_duration import CycleDuration
+from cycleplotter.infrastructure.files.reader import read_file
 from cycleplotter.usecases.parser.base import Parser
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
@@ -11,7 +11,7 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 
 class AppleHealthParser(Parser):
     def parse(self, input_data_path: str) -> list[CycleDuration]:
-        xml_content = extract_xml_content(input_data_path)
+        xml_content = read_file(input_data_path, "apple_health_export/export.xml")
         return parse_export(xml_content)
 
 
@@ -57,12 +57,3 @@ def parse_cycle_dates(xml_content: str) -> list[dt.datetime]:
 def parse_export(xml_content: str) -> list[CycleDuration]:
     cycle_dates = parse_cycle_dates(xml_content)
     return extract_cycle_durations(cycle_dates)
-
-
-def extract_xml_content(path: str) -> str:
-    if path.endswith(".zip"):
-        with zipfile.ZipFile(path, "r") as zip_ref:
-            with zip_ref.open("apple_health_export/export.xml") as xml_file:
-                return xml_file.read()
-    with open(path) as xml_file:
-        return xml_file.read()

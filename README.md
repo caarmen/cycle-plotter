@@ -14,15 +14,15 @@ Run the program with the `--help` argument to see the full usage.
 
 ```
 % python -m cycleplotter.main --help
-usage: main.py [-h] --input-file INPUT_FILE --output-file OUTPUT_FILE --source {apple,withings}
+usage: main.py [-h] -i INPUT_FILE -o OUTPUT_FILE -s {apple,withings}
 
 options:
   -h, --help            show this help message and exit
-  --input-file INPUT_FILE
+  -i INPUT_FILE, --input-file INPUT_FILE
                         path to export.xml file exported from Apple Health
-  --output-file OUTPUT_FILE
+  -o OUTPUT_FILE, --output-file OUTPUT_FILE
                         path to image file to export
-  --source {apple,withings}
+  -s {apple,withings}, --source {apple,withings}
 ```
 
 The program has been tested exporting to png and pdf. But other formats are probably supported. The program uses matplotlib to output the image. The supported file formats may be in the matplotlib [documentation](https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.filetypes).

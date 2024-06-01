@@ -9,15 +9,18 @@ def main():
     arg_parser.add_argument(
         "--input-file",
         help="path to export.xml file exported from Apple Health",
+        required=True,
     )
     arg_parser.add_argument(
         "--output-file",
         help="path to image file to export",
+        required=True,
     )
     arg_parser.add_argument(
         "--source",
         type=Source,
         choices=Source,
+        required=True,
     )
     args = arg_parser.parse_args()
     parser = create_parser(args.source)

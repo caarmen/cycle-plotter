@@ -86,37 +86,37 @@
 </Record>
 
 <!-- Begin of pregnancy - April 2021 -->
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-04-10 07:00:00 +0200" startDate="2021-04-10 12:00:00 +0200" endDate="2021-04-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-04-10 07:00:00 +0200" startDate="2021-04-10 12:00:00 +0200" endDate="2021-04-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
 
 <!-- Continue None flow through full term pregnancy -->
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-05-10 07:00:00 +0200" startDate="2021-05-10 12:00:00 +0200" endDate="2021-05-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-05-10 07:00:00 +0200" startDate="2021-05-10 12:00:00 +0200" endDate="2021-05-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-06-10 07:00:00 +0200" startDate="2021-06-10 12:00:00 +0200" endDate="2021-06-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-06-10 07:00:00 +0200" startDate="2021-06-10 12:00:00 +0200" endDate="2021-06-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-07-10 07:00:00 +0200" startDate="2021-07-10 12:00:00 +0200" endDate="2021-07-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-07-10 07:00:00 +0200" startDate="2021-07-10 12:00:00 +0200" endDate="2021-07-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-08-10 07:00:00 +0200" startDate="2021-08-10 12:00:00 +0200" endDate="2021-08-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-08-10 07:00:00 +0200" startDate="2021-08-10 12:00:00 +0200" endDate="2021-08-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-09-10 07:00:00 +0200" startDate="2021-09-10 12:00:00 +0200" endDate="2021-09-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-09-10 07:00:00 +0200" startDate="2021-09-10 12:00:00 +0200" endDate="2021-09-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-10-10 07:00:00 +0200" startDate="2021-10-10 12:00:00 +0200" endDate="2021-10-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-10-10 07:00:00 +0200" startDate="2021-10-10 12:00:00 +0200" endDate="2021-10-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>
-<Record type="HKCategoryTypeIdentifierMenstralFlowNone" sourceName="Health" sourceVersion="14.0" creationDate="2021-11-10 07:00:00 +0200" startDate="2021-11-10 12:00:00 +0200" endDate="2021-11-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
+<Record type="HKCategoryTypeIdentifierMenstralFlow" sourceName="Health" sourceVersion="14.0" creationDate="2021-11-10 07:00:00 +0200" startDate="2021-11-10 12:00:00 +0200" endDate="2021-11-10 12:00:00 +0200" value="HKCategoryValueMensturalFlowNone">
   <MetadataEntry key="HKWasUserEntered" value="1"/>
   <MetadataEntry key="HKMenstrualCycleStart" value="0"/>
 </Record>

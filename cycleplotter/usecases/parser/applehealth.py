@@ -2,7 +2,7 @@ import datetime as dt
 
 from defusedxml import ElementTree as ET
 
-from cycleplotter.infrastructure.files.reader import read_file
+from cycleplotter.infrastructure.files.opener import open_file
 from cycleplotter.usecases.parser.base import BaseParser
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
@@ -10,7 +10,8 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 
 class AppleHealthParser(BaseParser):
     def parse(self, input_data_path: str) -> list[dt.datetime]:
-        xml_content = read_file(input_data_path, "apple_health_export/export.xml")
+        with open_file(input_data_path, "apple_health_export/export.xml") as file:
+            xml_content = file.read()
 
         document = ET.fromstring(xml_content)
 

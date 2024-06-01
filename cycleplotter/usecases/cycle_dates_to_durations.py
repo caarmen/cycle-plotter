@@ -9,9 +9,12 @@ def cycle_dates_to_durations(cycle_dates: list[dt.datetime]):
 
     result = []
 
-    current_cycle_date_start = cycle_dates[0]
-    for i, cycle_date in enumerate(cycle_dates):
-        delta_days_previous_log = (cycle_date - cycle_dates[i - 1]).days if i > 0 else 0
+    sorted_cycle_dates = sorted(cycle_dates)
+    current_cycle_date_start = sorted_cycle_dates[0]
+    for i, cycle_date in enumerate(sorted_cycle_dates):
+        delta_days_previous_log = (
+            (cycle_date - sorted_cycle_dates[i - 1]).days if i > 0 else 0
+        )
         if delta_days_previous_log > 3:
             result.append(
                 CycleDuration(

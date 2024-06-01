@@ -7,16 +7,19 @@ from cycleplotter.usecases import extract_cycle_durations, plotter
 def main():
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
+        "-i",
         "--input-file",
         help="path to export.xml file exported from Apple Health",
         required=True,
     )
     arg_parser.add_argument(
+        "-o",
         "--output-file",
         help="path to image file to export",
         required=True,
     )
     arg_parser.add_argument(
+        "-s",
         "--source",
         type=Source,
         choices=Source,

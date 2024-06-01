@@ -1,6 +1,6 @@
 ## Cycle Plotter
 
-This command-line tool reads data from an Apple Health or Withings Healthmate export, and creates a plot of cycle durations.
+This command-line tool reads data from an Apple Health or Withings Health Mate export, and creates a plot of cycle durations.
 
 <img src="docs/example.png">
 On the x-axis, we have the date at the beginning of a cycle.

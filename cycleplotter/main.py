@@ -1,7 +1,7 @@
 import argparse
 
-from cycleplotter import plotter
 from cycleplotter.parser import factory
+from cycleplotter.usecases import plotter
 
 
 def main():

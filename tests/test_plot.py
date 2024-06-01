@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from cycleplotter import plotter
-from cycleplotter.parser.factory import create_parser
+from cycleplotter.usecases import plotter
+from cycleplotter.usecases.parser.factory import create_parser
 
 
 @pytest.mark.parametrize(

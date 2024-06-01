@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from cycleplotter.model import CycleDuration
+from cycleplotter.entities.cycle_duration import CycleDuration
 
 
 class Parser(ABC):

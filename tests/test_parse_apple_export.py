@@ -1,6 +1,6 @@
 import pytest
 
-from cycleplotter.parser.factory import create_parser
+from cycleplotter.usecases.parser.factory import create_parser
 
 
 @pytest.mark.parametrize(

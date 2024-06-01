@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from cycleplotter.model import CycleDuration
+from cycleplotter.entities.cycle_duration import CycleDuration
 
 
 def plot_cycle_durations(

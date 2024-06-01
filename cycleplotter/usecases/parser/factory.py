@@ -1,4 +1,4 @@
-from cycleplotter.parser.applehealth import AppleHealthParser
+from cycleplotter.usecases.parser.applehealth import AppleHealthParser
 
 
 def create_parser(name: str):

@@ -3,8 +3,8 @@ import zipfile
 
 from defusedxml import ElementTree as ET
 
-from cycleplotter.model import CycleDuration
-from cycleplotter.parser.base import Parser
+from cycleplotter.entities.cycle_duration import CycleDuration
+from cycleplotter.usecases.parser.base import Parser
 
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S %z"
 

@@ -29,6 +29,7 @@ flowchart TD
     end
     subgraph usecases
         icycledataparser[cycledataparser]
+        plotter
     end
     main
 
@@ -67,7 +68,10 @@ flowchart TD
         end
         cycle_dates_to_durations
         extract_cycle_durations
-        plotter
+        subgraph plotter
+            config
+            plot_cycle_durations
+        end
     end
     main
 
@@ -106,12 +110,15 @@ flowchart TD
         end
         cycle_dates_to_durations
         extract_cycle_durations
-        plotter
+        subgraph plotter
+            pconfig[config]
+            plot_cycle_durations
+        end
     end
     main
 
     argparser --> config
-    argparser --> plotter
+    argparser --> pconfig
 
     applehealth --> opener
     applehealth --> base
@@ -127,13 +134,15 @@ flowchart TD
     main --> factory
     main --> base
     main --> extract_cycle_durations
-    main --> plotter
+    main --> pconfig
+    main --> plot_cycle_durations
 
     cycle_dates_to_durations --> CycleDuration
     extract_cycle_durations --> CycleDuration
     extract_cycle_durations --> cycle_dates_to_durations
     extract_cycle_durations --> base
 
-    plotter --> CycleDuration
+    plot_cycle_durations --> CycleDuration
+    plot_cycle_durations --> pconfig
 
 ```

@@ -1,23 +1,11 @@
-import dataclasses
 import datetime as dt
-import enum
 
 import matplotlib.pyplot as plt
 
 from cycleplotter.entities.cycle_duration import CycleDuration
+from cycleplotter.usecases.plotter.config import DurationAxis, PlotConfig
 
 DATE_FORMAT = "%Y-%m-%d"
-
-
-class DurationAxis(enum.StrEnum):
-    X_AXIS = "x"
-    Y_AXIS = "y"
-    BOTH = "both"
-
-
-@dataclasses.dataclass
-class PlotConfig:
-    duration_axis: DurationAxis = DurationAxis.BOTH
 
 
 def plot_cycle_durations(

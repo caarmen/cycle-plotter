@@ -19,8 +19,8 @@ def plot_cycle_durations(
     output_path: str,
 ):
 
-    plt.title("Cycle Duration Over Time")
     plt.figure(figsize=(config.size.width_inches, config.size.height_inches))
+    plt.title("Cycle Duration Over Time")
 
     x_axis_values = _get_x_axis_values(cycle_durations, config.duration_axis)
     y_axis_values = _get_y_axis_values(cycle_durations, config.duration_axis)

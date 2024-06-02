@@ -33,7 +33,9 @@ def parse_size(size_str: str) -> plotter.Size:
 
 
 def parse_args() -> CliArgs:
-    arg_parser = argparse.ArgumentParser()
+    arg_parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
     arg_parser.add_argument(
         "-i",
         "--input-file",
@@ -59,18 +61,18 @@ def parse_args() -> CliArgs:
         type=plotter.DurationAxis,
         choices=plotter.DurationAxis,
         default=plotter.DurationAxis.BOTH,
-        help="""Indicate the cycle durations on the x-axis 
-(by horizontal spacing between points), y-axis (by their values), or both axes. 
-Default %(default)s.
-""",
+        help="""Indicate the cycle durations on the x-axis (by horizontal spacing
+between points), y-axis (by their values), or both axes.
+Default %(default)s.""",
     )
     arg_parser.add_argument(
         "-d",
         "--dimensions",
         type=parse_size,
         default=plotter.SIZE_A4,
-        help="""The size of the image to create. Supported values are a4, letter, or <width>x<height><unit>.
-Supported units are in, cm, and px. Example: 600x400px. Default a4.
-""",
+        help="""The size of the image to create.
+Supported values are a4, letter, or <width>x<height><unit>.
+Supported units are in, cm, and px. Example: 600x400px.
+Default a4.""",
     )
     return arg_parser.parse_args()

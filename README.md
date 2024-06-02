@@ -36,11 +36,15 @@ options:
                         path to image file to export
   -s {apple,withings}, --source {apple,withings}
   -a {x,y,both}, --axis {x,y,both}
-                        Indicate the cycle durations on the x-axis (by horizontal spacing between points), y-axis (by their values), or both
-                        axes. Default both.
+                        Indicate the cycle durations on the x-axis (by horizontal spacing
+                        between points), y-axis (by their values), or both axes.
+                        Default both.
   -d DIMENSIONS, --dimensions DIMENSIONS
-                        The size of the image to create. Supported values are a4, letter, or <width>x<height><unit>. Supported units are in,
-                        cm, and px. Example: 600x400px. Default a4.
+                        The size of the image to create.
+                        Supported values are a4, letter, or <width>x<height><unit>.
+                        Supported units are in, cm, and px. Example: 600x400px.
+                        Default a4.
+
 ```
 
 The program has been tested exporting to png and pdf. But other formats are probably supported. The program uses matplotlib to output the image. The supported file formats may be in the matplotlib [documentation](https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.filetypes).

@@ -37,7 +37,7 @@ def parse_args() -> CliArgs:
     arg_parser.add_argument(
         "-i",
         "--input-file",
-        help="path to export.xml file exported from Apple Health",
+        help="path to archive exported from Apple Health or Withings Health Mate",
         required=True,
     )
     arg_parser.add_argument(

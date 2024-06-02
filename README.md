@@ -31,7 +31,7 @@ usage: main.py [-h] -i INPUT_FILE -o OUTPUT_FILE -s {apple,withings} [-a {x,y,bo
 options:
   -h, --help            show this help message and exit
   -i INPUT_FILE, --input-file INPUT_FILE
-                        path to export.xml file exported from Apple Health
+                        path to archive exported from Apple Health or Withings Health Mate
   -o OUTPUT_FILE, --output-file OUTPUT_FILE
                         path to image file to export
   -s {apple,withings}, --source {apple,withings}

@@ -3,7 +3,12 @@ import datetime as dt
 import matplotlib.pyplot as plt
 
 from cycleplotter.entities.cycle_duration import CycleDuration
-from cycleplotter.usecases.plotter.config import DurationAxis, PlotConfig
+from cycleplotter.usecases.plotter.config import (
+    SIZE_A4,
+    SIZE_LETTER,
+    DurationAxis,
+    PlotConfig,
+)
 
 DATE_FORMAT = "%Y-%m-%d"
 
@@ -55,8 +60,11 @@ def plot_cycle_durations(
     plt.grid(True)
 
     plt.xticks(rotation=45)
-    plt.tight_layout(rect=[0.05, 0.05, 0.95, 0.95])
-    plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+    # If the size is letter or a4, assume it's for printing, and include margins:
+    if config.size in (SIZE_LETTER, SIZE_A4):
+        plt.tight_layout(rect=[0.05, 0.05, 0.95, 0.95])
+    else:
+        plt.tight_layout()
     plt.savefig(output_path)
     plt.close()
 

@@ -23,11 +23,26 @@ jobs:
         run: bash scripts/codecheck.sh
       - name: Run tests
         run: bash -x scripts/run_tests.sh
-      - name: Post coverage report
-        uses: 5monkeys/cobertura-action@v14
+      - name: ReportGenerator
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.3.5
         with:
-          path: reports/coverage.xml
-          minimum_coverage: 75
+          reports: "reports/coverage.xml"
+          targetdir: 'coveragereport'
+          reporttypes: MarkdownSummaryGithub
+      - name: Upload coverage report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CoverageReport
+          path: coveragereport
+      - name: Add comment to PR
+        if: github.event_name == 'pull_request'
+        run: gh pr comment $PR_NUMBER --body-file coveragereport/SummaryGithub.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+      - name: Publish coverage in build summary
+        run: cat coveragereport/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
+        shell: bash
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
         if: always() # always run even if the previous step fails

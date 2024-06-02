@@ -19,7 +19,7 @@ from cycleplotter.usecases import extract_cycle_durations
         ("pregnancy", 6),
     ],
 )
-def test_parse_export(
+def test_extract_cycle_durations(
     fixture_path: str,
     expected_cycle_count: int,
 ):

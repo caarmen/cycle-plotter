@@ -16,8 +16,9 @@ Cycles covering a period of 6 months, with little variation in cycle length.
 
 #### Pregnancy
 Cycles covering a period of just over one year, with a pregnancy during that time.
-<img src="docs/pregnancy.png" >
-
+|`--axis x` | `--axis y` | `--axis both` (default) |
+|---|---|---|
+|<img src="docs/pregnancy-x.png" > |<img src="docs/pregnancy-y.png" > |<img src="docs/pregnancy-both.png" >|
 
 ## Usage
 
@@ -25,7 +26,7 @@ Run the program with the `--help` argument to see the full usage.
 
 ```
 % python -m cycleplotter.main --help
-usage: main.py [-h] -i INPUT_FILE -o OUTPUT_FILE -s {apple,withings}
+usage: main.py [-h] -i INPUT_FILE -o OUTPUT_FILE -s {apple,withings} [-a {x,y,both}]
 
 options:
   -h, --help            show this help message and exit
@@ -34,6 +35,9 @@ options:
   -o OUTPUT_FILE, --output-file OUTPUT_FILE
                         path to image file to export
   -s {apple,withings}, --source {apple,withings}
+  -a {x,y,both}, --axis {x,y,both}
+                        Indicate the cycle durations on the x-axis (by horizontal spacing between points), y-axis (by their values), or both
+                        axes. Default both.
 ```
 
 The program has been tested exporting to png and pdf. But other formats are probably supported. The program uses matplotlib to output the image. The supported file formats may be in the matplotlib [documentation](https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.filetypes).

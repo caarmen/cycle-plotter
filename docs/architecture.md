@@ -1,6 +1,6 @@
 # Architecture
 
-## Packages, with package dependencies
+## Top-level packages, with top-level package dependencies
 ```mermaid
 flowchart TD
     entities
@@ -16,24 +16,55 @@ flowchart TD
     usecases --> entities
 ```
 
-## Packages and modules, with package dependencies
+## All packages, with top-level package dependencies
+```mermaid
+flowchart TD
+    entities
+    subgraph infrastructure
+        files
+    end
+    subgraph interfaceadapters
+        cli
+        cycledataparser
+    end
+    subgraph usecases
+        icycledataparser[cycledataparser]
+    end
+    main
+
+    main --> usecases
+    main --> interfaceadapters
+    interfaceadapters --> infrastructure
+    interfaceadapters --> usecases
+    usecases --> entities
+```
+
+## Packages and modules, with top-level package dependencies
 ```mermaid
 flowchart TD
     subgraph entities
         CycleDuration
     end
     subgraph infrastructure
-        file_opener
+        subgraph files
+            opener
+        end
     end
     subgraph interfaceadapters
-        subgraph parser
+        subgraph cli
+            argparser
+        end
+        subgraph cycledataparser
             applehealth
             withingshealthmate
+            factory
         end
-        factory
+        config
     end
     subgraph usecases
-        Parser
+        subgraph icycledataparser[cycledataparser]
+            base
+        end
         cycle_dates_to_durations
         extract_cycle_durations
         plotter
@@ -54,38 +85,55 @@ flowchart TD
         CycleDuration
     end
     subgraph infrastructure
-        file_opener
+        subgraph files
+            opener
+        end
     end
     subgraph interfaceadapters
-        subgraph parser
+        subgraph cli
+            argparser
+        end
+        subgraph cycledataparser
             applehealth
             withingshealthmate
+            factory
         end
-        factory
+        config
     end
     subgraph usecases
-        Parser
+        subgraph icycledataparser[cycledataparser]
+            base
+        end
         cycle_dates_to_durations
         extract_cycle_durations
         plotter
     end
     main
 
-    main --> extract_cycle_durations
-    main --> plotter
-    main --> factory
+    argparser --> config
+    argparser --> plotter
 
+    applehealth --> opener
+    applehealth --> base
+    withingshealthmate --> opener
+    withingshealthmate --> base
+
+    factory --> config
     factory --> applehealth
     factory --> withingshealthmate
-    factory --> Parser
-    applehealth --> Parser
-    applehealth --> file_opener
-    withingshealthmate --> Parser
-    withingshealthmate --> file_opener
+    factory --> base
+
+    main --> argparser
+    main --> factory
+    main --> base
+    main --> extract_cycle_durations
+    main --> plotter
 
     cycle_dates_to_durations --> CycleDuration
-    extract_cycle_durations --> Parser
+    extract_cycle_durations --> CycleDuration
     extract_cycle_durations --> cycle_dates_to_durations
+    extract_cycle_durations --> base
 
     plotter --> CycleDuration
+
 ```

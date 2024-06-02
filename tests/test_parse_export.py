@@ -3,7 +3,10 @@ import datetime as dt
 import pytest
 
 from cycleplotter.entities.cycle_duration import CycleDuration
-from cycleplotter.interfaceadapters.factory import Source, create_parser
+from cycleplotter.interfaceadapters.config import Source
+from cycleplotter.interfaceadapters.cycledataparser.factory import (
+    create_cycle_data_parser,
+)
 from cycleplotter.usecases import extract_cycle_durations
 
 
@@ -22,11 +25,11 @@ def test_parse_export(
 ):
 
     cycle_durations_apple = extract_cycle_durations(
-        create_parser(Source.APPLE),
+        create_cycle_data_parser(Source.APPLE),
         f"tests/fixtures/apple/{fixture_path}.xml",
     )
     cycle_durations_withings = extract_cycle_durations(
-        create_parser(Source.WITHINGS),
+        create_cycle_data_parser(Source.WITHINGS),
         f"tests/fixtures/withings/{fixture_path}.csv",
     )
 

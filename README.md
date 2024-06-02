@@ -1,5 +1,10 @@
 ## Cycle Plotter
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/caarmen/cycle-plotter/check.yml)
+![GitHub License](https://img.shields.io/github/license/caarmen/cycle-plotter)
+![GitHub top language](https://img.shields.io/github/languages/top/caarmen/cycle-plotter)
+![GitHub last commit](https://img.shields.io/github/last-commit/caarmen/cycle-plotter)
+
 This command-line tool reads data from an Apple Health or Withings Health Mate export, and creates a plot of cycle durations.
 
 On the x-axis, we have the date at the beginning of a cycle.

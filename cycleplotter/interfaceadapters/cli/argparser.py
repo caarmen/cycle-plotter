@@ -39,7 +39,8 @@ def parse_args() -> CliArgs:
     arg_parser.add_argument(
         "-i",
         "--input-file",
-        help="path to archive exported from Apple Health or Withings Health Mate",
+        help="""path to archive exported from
+Apple Health or Withings Health Mate""",
         required=True,
     )
     arg_parser.add_argument(
@@ -61,8 +62,12 @@ def parse_args() -> CliArgs:
         type=plotter.DurationAxis,
         choices=plotter.DurationAxis,
         default=plotter.DurationAxis.BOTH,
-        help="""Indicate the cycle durations on the x-axis (by horizontal spacing
-between points), y-axis (by their values), or both axes.
+        help="""Indicate the cycle durations on:
+
+x: the x-axis, by horizontal spacing between points
+y: the y-axis, by their values
+both: both axes
+
 Default %(default)s.""",
     )
     arg_parser.add_argument(
@@ -71,8 +76,16 @@ Default %(default)s.""",
         type=parse_size,
         default=plotter.SIZE_A4,
         help="""The size of the image to create.
-Supported values are a4, letter, or <width>x<height><unit>.
-Supported units are in, cm, and px. Example: 600x400px.
+
+Supported values are:
+  a4
+  letter
+  <width>x<height><unit>
+
+Supported units are in, cm, and px.
+
+Example: 600x400px
+
 Default a4.""",
     )
     return arg_parser.parse_args()

@@ -1,4 +1,5 @@
 import argparse
+import re
 from typing import Protocol
 
 from cycleplotter.interfaceadapters.config import Source
@@ -13,16 +14,24 @@ class CliArgs(Protocol):
     dimensions: plotter.Size
 
 
+class SizeParseError(ValueError):
+    pass
+
+
 def parse_size(size_str: str) -> plotter.Size:
     size_str_lower = size_str.lower()
     if size_str_lower == "a4":
         return plotter.SIZE_A4
     if size_str_lower == "letter":
         return plotter.SIZE_LETTER
-    unit = size_str_lower[-2:]
-    width, height = size_str_lower[0:-2].split("x")
-    width = float(width)
-    height = float(height)
+    pattern = r"^(\d*\.?\d+)x(\d*\.?\d+)(cm|px|in)$"
+    match = re.match(pattern, size_str_lower)
+    if match:
+        width = float(match.group(1))
+        height = float(match.group(2))
+        unit = match.group(3)
+    else:
+        raise SizeParseError(f"Unknown size format {size_str}")
     if unit == "in":
         return plotter.Size(width, height)
     if unit == "cm":

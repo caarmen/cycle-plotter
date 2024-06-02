@@ -1,13 +1,21 @@
 from pathlib import Path
 
 import pytest
+from matplotlib import image as mpimage
 
 from cycleplotter.interfaceadapters.config import Source
 from cycleplotter.interfaceadapters.cycledataparser.factory import (
     create_cycle_data_parser,
 )
 from cycleplotter.usecases import extract_cycle_durations
-from cycleplotter.usecases.plotter import DurationAxis, PlotConfig, plot_cycle_durations
+from cycleplotter.usecases.plotter import (
+    SIZE_A4,
+    SIZE_LETTER,
+    DurationAxis,
+    PlotConfig,
+    plot_cycle_durations,
+)
+from cycleplotter.usecases.plotter.config import Size
 
 
 @pytest.mark.parametrize(
@@ -34,12 +42,23 @@ from cycleplotter.usecases.plotter import DurationAxis, PlotConfig, plot_cycle_d
         ("pregnancy",),
     ],
 )
+@pytest.mark.parametrize(
+    argnames=["input_size", "expected_width_px", "expected_height_px"],
+    argvalues=[
+        (SIZE_A4, 1169, 827),
+        (SIZE_LETTER, 1100, 850),
+        (Size(width_inches=6, height_inches=4), 600, 400),
+    ],
+)
 def test_plot_cycle_durations(
     tmp_path,
     source: Source,
     extension: str,
     duration_axis: DurationAxis,
     fixture_path,
+    input_size: Size,
+    expected_width_px,
+    expected_height_px,
 ):
     image_output_path: Path = tmp_path / "test_output.png"
     assert not image_output_path.exists()
@@ -52,6 +71,12 @@ def test_plot_cycle_durations(
         output_path=image_output_path,
         config=PlotConfig(
             duration_axis=duration_axis,
+            size=input_size,
         ),
     )
     assert image_output_path.exists()
+    img = mpimage.imread(image_output_path)
+    actual_width_px = img.shape[1]
+    actual_height_px = img.shape[0]
+    assert actual_width_px == expected_width_px
+    assert actual_height_px == expected_height_px

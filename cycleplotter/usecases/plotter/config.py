@@ -14,7 +14,10 @@ class Size:
     height_inches: float
 
 
-SIZE_LETTER = Size(width_inches=11, height_inches=8)
+SIZE_LETTER = Size(
+    width_inches=11,
+    height_inches=8.5,
+)
 
 SIZE_A4 = Size(
     width_inches=11.69,

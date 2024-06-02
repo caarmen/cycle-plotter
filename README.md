@@ -26,7 +26,7 @@ Run the program with the `--help` argument to see the full usage.
 
 ```
 % python -m cycleplotter.main --help
-usage: main.py [-h] -i INPUT_FILE -o OUTPUT_FILE -s {apple,withings} [-a {x,y,both}]
+usage: main.py [-h] -i INPUT_FILE -o OUTPUT_FILE -s {apple,withings} [-a {x,y,both}] [-d DIMENSIONS]
 
 options:
   -h, --help            show this help message and exit
@@ -38,6 +38,9 @@ options:
   -a {x,y,both}, --axis {x,y,both}
                         Indicate the cycle durations on the x-axis (by horizontal spacing between points), y-axis (by their values), or both
                         axes. Default both.
+  -d DIMENSIONS, --dimensions DIMENSIONS
+                        The size of the image to create. Supported values are a4, letter, or <width>x<height><unit>. Supported units are in,
+                        cm, and px. Example: 600x400px. Default a4.
 ```
 
 The program has been tested exporting to png and pdf. But other formats are probably supported. The program uses matplotlib to output the image. The supported file formats may be in the matplotlib [documentation](https://matplotlib.org/stable/api/backend_bases_api.html#matplotlib.backend_bases.FigureCanvasBase.filetypes).

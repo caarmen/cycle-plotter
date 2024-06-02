@@ -12,6 +12,7 @@ def main():
         output_path=args.output_file,
         config=plotter.PlotConfig(
             duration_axis=args.axis,
+            size=args.dimensions,
         ),
     )
 
